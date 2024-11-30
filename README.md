@@ -1,49 +1,66 @@
 <div align="center">
 
 [![license](https://img.shields.io/badge/license-Apache%202-blue)](/LICENSE.md)
-[![npm latest package](https://img.shields.io/npm/v/@lifi/types/latest.svg)](https://www.npmjs.com/package/@lifi/types)
-[![npm downloads](https://img.shields.io/npm/dm/@lifi/types.svg)](https://www.npmjs.com/package/@lifi/types)
-[![Follow on Twitter](https://img.shields.io/twitter/follow/lifiprotocol.svg?label=follow+LI.FI)](https://twitter.com/lifiprotocol)
+[![Crowdin](https://badges.crowdin.net/jumper-exchange/localized.svg)](https://crowdin.com/project/jumper-exchange)
+[![Follow on Twitter](https://img.shields.io/twitter/follow/JumperExchange.svg?label=follow+Jumper.Exchange)](https://twitter.com/JumperExchange)
 
 </div>
 
-# LI.FI - Types
+# Jumper.Exchange
 
-Types for the LI.FI stack.
+This is the [jumper.exchange](https://jumper.exchange) repository that gets deployed to `develop.jumper.exchange`, `staging.jumper.exchange` and `jumper.exchange`.
 
-## Summary
+## Getting Started
 
-This package contains all common types for the [LI.FI SDK](https://github.com/lifinance/sdk).
-Learn more about LI.FI on (https://li.fi).
+In the root directory run the following commands to get started:
 
-Check out the [Changelog](./CHANGELOG.md) to see what changed in the last releases.
-
-## Installation
-
-```bash
-yarn add @lifi/types
+```
+yarn
 ```
 
-or
+to install all dependencies, and choose one of these start commands to start the development vite server and to start building packages in watch mode.
 
-```bash
-npm install --save @lifi/types
+```
+yarn dev
+yarn dev:local
+yarn dev:staging
+yarn dev:production
 ```
 
-## Release
+Please refer to the following descriptions of the dev serve scripts:
 
-The package uses `standard-version` to generate a changelog based on semantic commit history. The `standard-version` package also handles version numbering.
+    dev - starts the app using the backend develop stage
+    dev:local - starts the app using a locally running backend
+    dev:staging - starts the app using the backend staging stage
+    dev:production - starts the app using the backend production stage
 
-Once main is up to date with the changes to be released execute the following command on the main branch to invoke `standard-version`:
+### Husky Scripts
 
-```bash
-yarn release
+In addition to these commands you should also run
+
+```
+yarn add husky
 ```
 
-Then to release:
+if you plan to commit to this repository please use all necessary husky hooks. If you have trouble running a script try modifying the permissions for the scripts with
 
-```bash
-git push --follow-tags origin main
+```
+chmod ug+x .husky/
 ```
 
-This will push a newly created git tag to the remote repository, which will trigger a github action which will publish the new version to npm
+to mark them as executables.
+
+### lint-staged
+
+The idea of invoking `tsc --noEmit` from bash instead of yarn comes from here: [github issue](https://github.com/lint-staged/lint-staged/issues/825#issuecomment-674575655)
+It fixes some problems we had with lint-staged ignoring our tsconfig and not working properly.
+
+## Contributing Translations
+
+We appreciate your interest in helping translate our project!
+
+If you'd like to contribute translations, please visit our Crowdin project page at [Crowdin Jumper Exchange](https://crowdin.com/project/jumper-exchange) and [Crowdin LI.FI Widget](https://crowdin.com/project/lifi-widget).
+Register on Crowdin and you can start translating the project into your preferred language.
+Your contributions will help make our project accessible to a wider audience around the world.
+
+Thank you for your support!
